@@ -36,7 +36,7 @@ body {
     border-radius: 4px;
   }
   
-  .searchbtn {
+  button{
     padding: 8px 12px;
     margin-left: 5px;
     font-size: 14px;
@@ -50,19 +50,10 @@ body {
   .searchbtn:hover {
     background-color: #0056b3;
   }
-  .managebtn {
+ 
 
-    margin-top: 10px;
-    padding: 8px 12px;
-    margin-left: 5px;
-    font-size: 14px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-
-  .managebtn:hover {
+  button:hover {
     background-color: #0056b3;
   }
+  
+  
