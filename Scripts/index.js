@@ -1,4 +1,4 @@
-var players = localStorage.getItem("players") || [
+var players = localStorage.getItem("players") || [    /////get items from localstorage or from array of objects containing players data
   {
     name: "Thibaut Courtois",
     position: "Goalkeeper",
@@ -162,14 +162,14 @@ var players = localStorage.getItem("players") || [
   },
 ];
 
-players.map(function (e) {
+players.map(function (e) {                         ////////// mapping over the array to append the data into a div player card
   if (e.position === "Goalkeeper") {
     $(".gk").append(`
             
             <div class="card">
   <img src=${e.image} alt="Avatar" style="width:100%">
   <div class="container">
-    <h4>player name : ${e.name}</h4>
+    <h4>Player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
   </div>
@@ -180,7 +180,7 @@ players.map(function (e) {
             <div class="card">
   <img src=${e.image} alt="Avatar" style="width:100%">
   <div class="container">
-    <h4>player name : ${e.name}</h4>
+    <h4>Player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
   </div>
@@ -191,7 +191,7 @@ players.map(function (e) {
             <div class="card">
   <img src=${e.image} alt="Avatar" style="width:100%">
   <div class="container">
-    <h4>player name : ${e.name}</h4>
+    <h4>Player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
   </div>
@@ -202,7 +202,7 @@ players.map(function (e) {
             <div class="card">
   <img src=${e.image} alt="Avatar" style="width:100%">
   <div class="container">
-    <h4>player name : ${e.name}</h4>
+    <h4>Player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
   </div>
@@ -213,15 +213,13 @@ players.map(function (e) {
             <div class="card">
   <img src=${e.image} alt="Avatar" style="width:100%">
   <div class="container">
-    <h4>player name : ${e.name}</h4>
-    
-    <p>overAll rating: ${e.overallRating}</p>
+    <h4> Coach name : ${e.name}</h4>
   </div>
 </div> `);
   }
 });
 
-var button = document.querySelector(".searchbtn");
+var button = document.querySelector(".searchbtn");           ///////////// a search function that loops over player cards 
 
 button.onclick = function () {
   var input = document.getElementById("search").value.toLowerCase();
@@ -230,21 +228,11 @@ button.onclick = function () {
 
   for (var i = 0; i < squad.length; i = i + 1) {
     var playerName = squad[i].querySelector("h4").textContent.toLowerCase();
-    var headings = document.querySelectorAll("h2");
-    var visible = false;
 
     if (playerName.includes(input)) {
       squad[i].style.display = "block";
-      visible = true;
     } else {
       squad[i].style.display = "none";
-    }
-  }
-  for (var j = 0; j < headings.length; j = j + 1) {
-    if (visible === true) {
-      headings[j].style.display = "block";
-    } else {
-      headings[j].style.display = "none";
     }
   }
 };
