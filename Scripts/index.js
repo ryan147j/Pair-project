@@ -1,7 +1,3 @@
-$(".managebtn").on("click", function () {
-  window.location.href = "managep.html";
-});
-
 var players = localStorage.getItem("players") || [
   {
     name: "Thibaut Courtois",
@@ -160,11 +156,10 @@ var players = localStorage.getItem("players") || [
   },
   {
     name: "Z.Zidane",
-    position:"Coach",
+    position: "Coach",
     image: "../Assets/Coaches/Zidane.webp",
     overallRating: 90,
   },
-
 ];
 
 players.map(function (e) {
@@ -174,7 +169,7 @@ players.map(function (e) {
             <div class="card">
   <img src=${e.image} alt="Avatar" style="width:100%">
   <div class="container">
-    <h4><b>player name : ${e.name}</b></h4>
+    <h4>player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
   </div>
@@ -185,46 +180,71 @@ players.map(function (e) {
             <div class="card">
   <img src=${e.image} alt="Avatar" style="width:100%">
   <div class="container">
-    <h4><b>player name : ${e.name}</b></h4>
+    <h4>player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
   </div>
 </div> `);
-  }
-  else if (e.position === "Midfielder") {
+  } else if (e.position === "Midfielder") {
     $(".md").append(`
             
             <div class="card">
   <img src=${e.image} alt="Avatar" style="width:100%">
   <div class="container">
-    <h4><b>player name : ${e.name}</b></h4>
+    <h4>player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
   </div>
 </div> `);
-  }
-  else if (e.position === "Forward") {
+  } else if (e.position === "Forward") {
     $(".fw").append(`
             
             <div class="card">
   <img src=${e.image} alt="Avatar" style="width:100%">
   <div class="container">
-    <h4><b>player name : ${e.name}</b></h4>
+    <h4>player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
   </div>
 </div> `);
-  }
-  else if (e.position === "Coach") {
+  } else if (e.position === "Coach") {
     $(".ch").append(`
             
             <div class="card">
   <img src=${e.image} alt="Avatar" style="width:100%">
   <div class="container">
-    <h4><b>player name : ${e.name}</b></h4>
+    <h4>player name : ${e.name}</h4>
     
     <p>overAll rating: ${e.overallRating}</p>
   </div>
 </div> `);
   }
 });
+
+var button = document.querySelector(".searchbtn");
+
+button.onclick = function () {
+  var input = document.getElementById("search").value.toLowerCase();
+
+  var squad = document.querySelectorAll(".card");
+
+  for (var i = 0; i < squad.length; i = i + 1) {
+    var playerName = squad[i].querySelector("h4").textContent.toLowerCase();
+    var headings = document.querySelectorAll("h2");
+    var visible = false;
+
+    if (playerName.includes(input)) {
+      squad[i].style.display = "block";
+      visible = true;
+    } else {
+      squad[i].style.display = "none";
+    }
+  }
+  for (var j = 0; j < headings.length; j = j + 1) {
+    if (visible === true) {
+      headings[j].style.display = "block";
+    } else {
+      headings[j].style.display = "none";
+    }
+  }
+};
