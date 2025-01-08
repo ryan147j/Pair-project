@@ -74,6 +74,97 @@ var players = localStorage.getItem("players") || [
     image: "../Assets/Defenders/Vallejo.webp",
     overallRating: 60,
   },
+  {
+    name: "Arda Guler",
+    position: "Midfielder",
+    jerseyNumber: 15,
+    image: "../Assets/Midfielders/ArdaGuler.webp",
+    overallRating: 91,
+  },
+  {
+    name: "J.Bellingham",
+    position: "Midfielder",
+    jerseyNumber: 5,
+    image: "../Assets/Midfielders/Bellingham.webp",
+    overallRating: 98,
+  },
+  {
+    name: "Ceballos",
+    position: "Midfielder",
+    jerseyNumber: 19,
+    image: "../Assets/Midfielders/Ceballos.webp",
+    overallRating: 90,
+  },
+  {
+    name: "Luka Modric",
+    position: "Midfielder",
+    jerseyNumber: 10,
+    image: "../Assets/Midfielders/Modric.webp",
+    overallRating: 100,
+  },
+  {
+    name: "Camavinga",
+    position: "Midfielder",
+    jerseyNumber: 6,
+    image: "../Assets/Midfielders/Camavinga.webp",
+    overallRating: 94,
+  },
+  {
+    name: "Tchouameni",
+    position: "Midfielder",
+    jerseyNumber: 14,
+    image: "../Assets/Midfielders/Tchouameni.webp",
+    overallRating: 91,
+  },
+  {
+    name: "Valverde",
+    position: "Midfielder",
+    jerseyNumber: 8,
+    image: "../Assets/Midfielders/Valverde.webp",
+    overallRating: 97,
+  },
+  {
+    name: "Vini Jr",
+    position: "Forward",
+    jerseyNumber: 7,
+    image: "../Assets/Forwards/Vinijr.webp",
+    overallRating: 99,
+  },
+  {
+    name: "Rodrygo",
+    position: "Forward",
+    jerseyNumber: 11,
+    image: "../Assets/Forwards/Rodrygo.webp",
+    overallRating: 99,
+  },
+  {
+    name: "Mbappe",
+    position: "Forward",
+    jerseyNumber: 9,
+    image: "../Assets/Forwards/Mbappe.webp",
+    overallRating: 99,
+  },
+  {
+    name: "Endrick",
+    position: "Forward",
+    jerseyNumber: 16,
+    image: "../Assets/Forwards/Endrick.webp",
+    overallRating: 89,
+  },
+  {
+    name: "Brahim",
+    position: "Forward",
+    jerseyNumber: 21,
+    image: "../Assets/Forwards/Brahim.webp",
+    overallRating: 90,
+  },
+  {
+    name: "Z.Zidane",
+    position:"Coach",
+    image: "../Assets/Coaches/Zidane.webp",
+    overallRating: 90,
+  },
+
 ];
 
 players.map(function (e) {
@@ -96,6 +187,42 @@ players.map(function (e) {
   <div class="container">
     <h4><b>player name : ${e.name}</b></h4>
     <p>jursey number : ${e.jerseyNumber}</p>
+    <p>overAll rating: ${e.overallRating}</p>
+  </div>
+</div> `);
+  }
+  else if (e.position === "Midfielder") {
+    $(".md").append(`
+            
+            <div class="card">
+  <img src=${e.image} alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>player name : ${e.name}</b></h4>
+    <p>jursey number : ${e.jerseyNumber}</p>
+    <p>overAll rating: ${e.overallRating}</p>
+  </div>
+</div> `);
+  }
+  else if (e.position === "Forward") {
+    $(".fw").append(`
+            
+            <div class="card">
+  <img src=${e.image} alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>player name : ${e.name}</b></h4>
+    <p>jursey number : ${e.jerseyNumber}</p>
+    <p>overAll rating: ${e.overallRating}</p>
+  </div>
+</div> `);
+  }
+  else if (e.position === "Coach") {
+    $(".ch").append(`
+            
+            <div class="card">
+  <img src=${e.image} alt="Avatar" style="width:100%">
+  <div class="container">
+    <h4><b>player name : ${e.name}</b></h4>
+    
     <p>overAll rating: ${e.overallRating}</p>
   </div>
 </div> `);
