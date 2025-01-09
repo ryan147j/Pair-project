@@ -175,8 +175,8 @@ var display = function () {
     <h4>Player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
-    <button id="rmv">remove</button>
-    <button> id="upd"update</button>
+    <button class="rmv">remove</button>
+    <button>update</button>
   </div>
 </div> `);
     } else if (e.position === "defender") {
@@ -188,8 +188,8 @@ var display = function () {
     <h4>Player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
-    <button id="rmv">remove</button>
-    <button id="upd">update</button>
+    <button class="rmv">remove</button>
+    <button>update</button>
   </div>
 </div> `);
     } else if (e.position === "midfielder") {
@@ -201,8 +201,8 @@ var display = function () {
     <h4>Player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
-    <button id="rmv">remove</button>
-    <button id="upd">update</button>
+    <button class="rmv">remove</button>
+    <button>update</button>
   </div>
 </div> `);
     } else if (e.position === "forward") {
@@ -214,8 +214,8 @@ var display = function () {
     <h4>Player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
-    <button id="rmv">remove</button>
-    <button id="upd">update</button>
+    <button class="rmv">remove</button>
+    <button>update</button>
   </div>
 </div> `);
     } else if (e.position === "coach") {
@@ -225,6 +225,7 @@ var display = function () {
   <img src=${e.image} alt="Avatar" style="width:100%">
   <div class="container">
     <h4> Coach name : ${e.name}</h4>
+    <button id="rmv">remove</button>
   </div>
 </div> `);
     }
@@ -286,6 +287,23 @@ $("#createplayerform").on("click", "#add", function () {
   window.location.href = "../Pages/index.html";
 });
 
-$("#rmv").on("click",function(){
-    
-})
+
+$(".rmv").on("click", function () {
+   // hides the player card when clicked
+ 
+     $(this).closest(".card").hide(); 
+});
+
+
+
+
+
+$(".rmv").on("click", function () {
+   // hides the player card when clicked
+ 
+     $(this).closest(".card").hide(); 
+});
+
+
+
+
