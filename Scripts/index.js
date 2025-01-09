@@ -1,3 +1,5 @@
+
+    
 var players = JSON.parse(localStorage.getItem("players")) || [
   /////get items from localstorage or from array of objects containing players data
   {
@@ -165,7 +167,7 @@ var players = JSON.parse(localStorage.getItem("players")) || [
 
 var display = function () {
   players.map(function (e) {
-    ////////// mapping over the array to append the data into a div player card
+     ////////// mapping over the array to append the data into a div player card
     if (e.position === "goalkeeper") {
       $(".gk").append(`
             
@@ -173,10 +175,10 @@ var display = function () {
   <img src=${e.image} alt="Avatar" style="width:100%">
   <div class="container">
     <h4>Player name : ${e.name}</h4>
-    <p>jursey number : ${e.jerseyNumber}</p>
-    <p>overAll rating: ${e.overallRating}</p>
+    <p>jursey number : ${e.jerseyNumber}<input type="text" class="inp" style="display: none;"></p>
+    <p>overAll rating: ${e.overallRating}<input type="text" class="inp" style="display: none;"></p></p>
     <button class="rmv">remove</button>
-    <button>update</button>
+    <button class="upd">update</button>
   </div>
 </div> `);
     } else if (e.position === "defender") {
@@ -186,10 +188,10 @@ var display = function () {
   <img src=${e.image} alt="Avatar" style="width:100%">
   <div class="container">
     <h4>Player name : ${e.name}</h4>
-    <p>jursey number : ${e.jerseyNumber}</p>
-    <p>overAll rating: ${e.overallRating}</p>
+    <p>jursey number : ${e.jerseyNumber}<input type="text" class="inp" style="display: none;"></p></p>
+    <p>overAll rating: ${e.overallRating}<input type="text" class="inp" style="display: none;"></p></p>
     <button class="rmv">remove</button>
-    <button>update</button>
+    <button class="upd">update</button>
   </div>
 </div> `);
     } else if (e.position === "midfielder") {
@@ -199,10 +201,10 @@ var display = function () {
   <img src=${e.image} alt="Avatar" style="width:100%">
   <div class="container">
     <h4>Player name : ${e.name}</h4>
-    <p>jursey number : ${e.jerseyNumber}</p>
-    <p>overAll rating: ${e.overallRating}</p>
+    <p>jursey number : ${e.jerseyNumber}<input type="text" class="inp" style="display: none;"></p></p>
+    <p>overAll rating: ${e.overallRating}<input type="text" class="inp" style="display: none;"></p></p>
     <button class="rmv">remove</button>
-    <button>update</button>
+    <button class="upd">update</button>
   </div>
 </div> `);
     } else if (e.position === "forward") {
@@ -212,10 +214,10 @@ var display = function () {
   <img src=${e.image} alt="Avatar" style="width:100%">
   <div class="container">
     <h4>Player name : ${e.name}</h4>
-    <p>jursey number : ${e.jerseyNumber}</p>
-    <p>overAll rating: ${e.overallRating}</p>
+    <p>jursey number : ${e.jerseyNumber}<input type="text" class="inp" style="display: none;"></p></p>
+    <p>overAll rating: ${e.overallRating}<input type="text" class="inp" style="display: none;"></p></p>
     <button class="rmv">remove</button>
-    <button>update</button>
+    <button class="upd">update</button>
   </div>
 </div> `);
     } else if (e.position === "coach") {
@@ -225,7 +227,7 @@ var display = function () {
   <img src=${e.image} alt="Avatar" style="width:100%">
   <div class="container">
     <h4> Coach name : ${e.name}</h4>
-    <button id="rmv">remove</button>
+    <button class="rmv">remove</button>
   </div>
 </div> `);
     }
@@ -262,14 +264,8 @@ function Createplayer(name, position, jerseyNumber, image = "", overallRating) {
 $("#createplayerform").on("click", "#add", function () {
   /// add player to the squad
 
-  var newName = document
-    .querySelector("#playername")
-    .value.toLowerCase()
-    .trim();
-  var newPosition = document
-    .querySelector("#playerposition")
-    .value.toLowerCase()
-    .trim();
+  var newName = document.querySelector("#playername").value.toLowerCase().trim();
+  var newPosition = document .querySelector("#playerposition") .value.toLowerCase().trim();
   var newjerseyNumber = document.querySelector("#jerseynumber").value;
   var newOverallrating = document.querySelector("#overallrating").value;
   var newImg = document.querySelector("#playerimage").value;
@@ -293,6 +289,15 @@ $(".rmv").on("click", function () {
  
      $(this).closest(".card").hide(); 
 });
+
+$(".upd").on("click",function(){
+  alert("confirm to update ")
+
+  
+})
+
+
+
 
 
 
