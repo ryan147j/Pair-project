@@ -17,6 +17,8 @@ body {
 
 .header a img {
   height: 50px;
+  border-radius: 10%;
+  background-size: 0%;
 }
 
 .header a:nth-child(2) {
@@ -26,6 +28,7 @@ body {
   color: white;
   font-weight: bold;
   font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #search {
@@ -58,15 +61,7 @@ button:hover {
   padding: 20px 50px;
 }
 
-h2 {
-  margin-top: 40px;
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #333;
-  border-bottom: 2px solid #007bff;
-  display: inline-block;
-  padding-bottom: 5px;
-}
+
 
 .card {
   background: white;
@@ -98,6 +93,8 @@ h2 {
   margin: 10px 0;
   font-size: 18px;
   color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  
 }
 
 .container p {
