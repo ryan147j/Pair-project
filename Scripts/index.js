@@ -287,12 +287,6 @@ $("#createplayerform").on("click", "#add", function () {
   window.location.href = "../Pages/index.html";
 });
 
-
-$(".rmv").on("click", function () {
-   // hides the player card when clicked
- 
-     $(this).closest(".card").hide(); 
+$(".card").on("click", function (event) {   /// removes the player card
+  $(event.target).parent().parent().remove();
 });
-
-
-
