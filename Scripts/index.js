@@ -172,6 +172,8 @@ players.map(function (e) {                         ////////// mapping over the a
     <h4>Player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
+    <button>remove</button>
+    <button>update</button>
   </div>
 </div> `);
   } else if (e.position === "Defender") {
@@ -183,6 +185,8 @@ players.map(function (e) {                         ////////// mapping over the a
     <h4>Player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
+    <button>remove</button>
+    <button>update</button>
   </div>
 </div> `);
   } else if (e.position === "Midfielder") {
@@ -194,6 +198,8 @@ players.map(function (e) {                         ////////// mapping over the a
     <h4>Player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
+    <button>remove</button>
+    <button>update</button>
   </div>
 </div> `);
   } else if (e.position === "Forward") {
@@ -205,6 +211,8 @@ players.map(function (e) {                         ////////// mapping over the a
     <h4>Player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
+    <button>remove</button>
+    <button>update</button>
   </div>
 </div> `);
   } else if (e.position === "Coach") {
