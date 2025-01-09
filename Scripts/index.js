@@ -175,8 +175,8 @@ var display = function () {
     <h4>Player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
-    <button>remove</button>
-    <button>update</button>
+    <button id="rmv">remove</button>
+    <button> id="upd"update</button>
   </div>
 </div> `);
     } else if (e.position === "defender") {
@@ -188,8 +188,8 @@ var display = function () {
     <h4>Player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
-    <button>remove</button>
-    <button>update</button>
+    <button id="rmv">remove</button>
+    <button id="upd">update</button>
   </div>
 </div> `);
     } else if (e.position === "midfielder") {
@@ -201,8 +201,8 @@ var display = function () {
     <h4>Player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
-    <button>remove</button>
-    <button>update</button>
+    <button id="rmv">remove</button>
+    <button id="upd">update</button>
   </div>
 </div> `);
     } else if (e.position === "forward") {
@@ -214,8 +214,8 @@ var display = function () {
     <h4>Player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
-    <button>remove</button>
-    <button>update</button>
+    <button id="rmv">remove</button>
+    <button id="upd">update</button>
   </div>
 </div> `);
     } else if (e.position === "coach") {
@@ -285,3 +285,7 @@ $("#createplayerform").on("click", "#add", function () {
   localStorage.setItem("players", JSON.stringify(players)); // set new player to the localstorqge
   window.location.href = "../Pages/index.html";
 });
+
+$("#rmv").on("click",function(){
+    
+})
