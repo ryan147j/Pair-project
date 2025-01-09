@@ -1,4 +1,5 @@
-var players = JSON.parse(localStorage.getItem("players")) || [    /////get items from localstorage or from array of objects containing players data
+var players = JSON.parse(localStorage.getItem("players")) || [
+  /////get items from localstorage or from array of objects containing players data
   {
     name: "Thibaut Courtois",
     position: "goalkeeper",
@@ -162,10 +163,11 @@ var players = JSON.parse(localStorage.getItem("players")) || [    /////get items
   },
 ];
 
-var display = function(){
-    players.map(function (e) {                         ////////// mapping over the array to append the data into a div player card
-  if (e.position === "goalkeeper") {
-    $(".gk").append(`
+var display = function () {
+  players.map(function (e) {
+    ////////// mapping over the array to append the data into a div player card
+    if (e.position === "goalkeeper") {
+      $(".gk").append(`
             
             <div class="card">
   <img src=${e.image} alt="Avatar" style="width:100%">
@@ -177,8 +179,8 @@ var display = function(){
     <button>update</button>
   </div>
 </div> `);
-  } else if (e.position === "defender") {
-    $(".df").append(`
+    } else if (e.position === "defender") {
+      $(".df").append(`
             
             <div class="card">
   <img src=${e.image} alt="Avatar" style="width:100%">
@@ -190,8 +192,8 @@ var display = function(){
     <button>update</button>
   </div>
 </div> `);
-  } else if (e.position === "midfielder") {
-    $(".md").append(`
+    } else if (e.position === "midfielder") {
+      $(".md").append(`
             
             <div class="card">
   <img src=${e.image} alt="Avatar" style="width:100%">
@@ -203,8 +205,8 @@ var display = function(){
     <button>update</button>
   </div>
 </div> `);
-  } else if (e.position === "forward") {
-    $(".fw").append(`
+    } else if (e.position === "forward") {
+      $(".fw").append(`
             
             <div class="card">
   <img src=${e.image} alt="Avatar" style="width:100%">
@@ -216,8 +218,8 @@ var display = function(){
     <button>update</button>
   </div>
 </div> `);
-  } else if (e.position === "coach") {
-    $(".ch").append(`
+    } else if (e.position === "coach") {
+      $(".ch").append(`
             
             <div class="card">
   <img src=${e.image} alt="Avatar" style="width:100%">
@@ -225,65 +227,61 @@ var display = function(){
     <h4> Coach name : ${e.name}</h4>
   </div>
 </div> `);
-  }
-});}
-
-display()
-
-
-var button = document.querySelector(".searchbtn");           ///////////// a search function that loops over player cards 
-
-// button.onclick = function () {
-//   var input = document.getElementById("search").value.toLowerCase();
-
-//   var squad = document.querySelectorAll(".card");
-
-//   for (var i = 0; i < squad.length; i = i + 1) {
-//     var playerName = squad[i].querySelector("h4").textContent.toLowerCase();
-
-//     if (playerName.includes(input)) {
-//       squad[i].style.display = "block";
-//     } else {
-//       squad[i].style.display = "none";
-//     }
-//   }
-// };
-function Createplayer(name, position, jerseyNumber, image='', overallRating) {     //factory function to create a new player
-    var player = {
-        name: name,
-        position: position,
-        jerseyNumber: jerseyNumber,
-        image: image,
-        overallRating: overallRating
-        
     }
-    return player
+  });
+};
 
+display();
+
+$(".searchbtn").on("click", function () {
+  var input = $("#search").val().toLowerCase().trim();
+
+  $(".card").map(function (index, element) {
+    var playerName = $(element).find("h4").text().toLowerCase();
+
+    if (playerName.includes(input)) {
+      $(element).show();
+    } else {
+      $(element).hide();
+    }
+  });
+});
+function Createplayer(name, position, jerseyNumber, image = "", overallRating) {
+  //factory function to create a new player
+  var player = {
+    name: name,
+    position: position,
+    jerseyNumber: jerseyNumber,
+    image: image,
+    overallRating: overallRating,
+  };
+  return player;
 }
 
+$("#createplayerform").on("click", "#add", function () {
+  /// add player to the squad
 
+  var newName = document
+    .querySelector("#playername")
+    .value.toLowerCase()
+    .trim();
+  var newPosition = document
+    .querySelector("#playerposition")
+    .value.toLowerCase()
+    .trim();
+  var newjerseyNumber = document.querySelector("#jerseynumber").value;
+  var newOverallrating = document.querySelector("#overallrating").value;
+  var newImg = document.querySelector("#playerimage").value;
 
+  var newOne = Createplayer(
+    newName,
+    newPosition,
+    newjerseyNumber,
+    newImg,
+    newOverallrating
+  );
+  players.push(newOne);
 
-
-
-
-$('#createplayerform').on('click','#add',function(){      /// add player to the squad
-
-var newName=document.querySelector("#playername").value.toLowerCase().trim()
-var newPosition=document.querySelector("#playerposition").value.toLowerCase().trim()
-var newjerseyNumber=document.querySelector("#jerseynumber").value
-var newOverallrating=document.querySelector("#overallrating").value
-var newImg=document.querySelector("#playerimage").value
-
-var newOne= Createplayer(newName,newPosition,newjerseyNumber,newImg,newOverallrating)
-players.push(
-    newOne
-)
-
-localStorage.setItem('players',JSON.stringify(players))   // set new player to the localstorqge
-window.location.href='../Pages/index.html'
-
-
-})
-
-    
+  localStorage.setItem("players", JSON.stringify(players)); // set new player to the localstorqge
+  window.location.href = "../Pages/index.html";
+});
