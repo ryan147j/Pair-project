@@ -16,6 +16,7 @@ body {
 }
 
 .header a img {
+  border-radius: 10%;
   height: 50px;
 }
 
