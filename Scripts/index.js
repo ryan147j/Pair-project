@@ -225,6 +225,7 @@ var display = function () {
   <img src=${e.image} alt="Avatar" style="width:100%">
   <div class="container">
     <h4> Coach name : ${e.name}</h4>
+    <button>remove</button>
   </div>
 </div> `);
     }
@@ -285,3 +286,5 @@ $("#createplayerform").on("click", "#add", function () {
   localStorage.setItem("players", JSON.stringify(players)); // set new player to the localstorqge
   window.location.href = "../Pages/index.html";
 });
+
+
