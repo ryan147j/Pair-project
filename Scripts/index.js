@@ -175,7 +175,7 @@ var display = function () {
     <h4>Player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
-    <button>remove</button>
+    <button class="rmv">remove</button>
     <button>update</button>
   </div>
 </div> `);
@@ -188,7 +188,7 @@ var display = function () {
     <h4>Player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
-    <button>remove</button>
+    <button class="rmv">remove</button>
     <button>update</button>
   </div>
 </div> `);
@@ -201,7 +201,7 @@ var display = function () {
     <h4>Player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
-    <button>remove</button>
+    <button class="rmv">remove</button>
     <button>update</button>
   </div>
 </div> `);
@@ -214,7 +214,7 @@ var display = function () {
     <h4>Player name : ${e.name}</h4>
     <p>jursey number : ${e.jerseyNumber}</p>
     <p>overAll rating: ${e.overallRating}</p>
-    <button>remove</button>
+    <button class="rmv">remove</button>
     <button>update</button>
   </div>
 </div> `);
@@ -225,7 +225,7 @@ var display = function () {
   <img src=${e.image} alt="Avatar" style="width:100%">
   <div class="container">
     <h4> Coach name : ${e.name}</h4>
-    <button>remove</button>
+    <button id="rmv">remove</button>
   </div>
 </div> `);
     }
@@ -286,5 +286,13 @@ $("#createplayerform").on("click", "#add", function () {
   localStorage.setItem("players", JSON.stringify(players)); // set new player to the localstorqge
   window.location.href = "../Pages/index.html";
 });
+
+
+$(".rmv").on("click", function () {
+   // hides the player card when clicked
+ 
+     $(this).closest(".card").hide(); 
+});
+
 
 
