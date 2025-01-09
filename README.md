@@ -1,3 +1,1 @@
 # Pair-project
-hello
-done
