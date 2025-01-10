@@ -308,13 +308,13 @@ $("#createplayerform").on("click", "#add", function () {
 $(".rmv").on("click", function () {
    // hides the player card when clicked
  
-     $(this).closest(".card").hide(); 
+     $(this).closest(".card").remove(); 
+     
 });
 
 $(".upd").on("click",function(){
   
   alert("confirm to update ")
-
   
 })
 
