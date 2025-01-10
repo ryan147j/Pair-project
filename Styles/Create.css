@@ -63,12 +63,27 @@
     transition: background-color 0.3s ease;
   
   }
+
 body {
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
-    height: 100vh; /* Set height to 100% of the viewport */
-    background-image: url(../Assets/planemadrid.jpg); /* Adjust path if needed */
-    background-size: cover; /* Cover the entire screen */
-    background-repeat: no-repeat; /* Prevent repeating */
-    background-position: center; /* Center the image */
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../Assets/planemadrid.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.formcontainer {
+  margin: 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
 }

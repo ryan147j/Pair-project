@@ -1,5 +1,4 @@
 
-    
 var players = JSON.parse(localStorage.getItem("players")) || [
   /////get items from localstorage or from array of objects containing players data
   {
@@ -207,7 +206,7 @@ var display = function () {
     <button class="upd">update</button>
   </div>
 </div> `);
-    } else if (e.position === "forward") {
+    } else if (e.position === "forward"){
       $(".fw").append(`
             
             <div class="card">
@@ -220,7 +219,7 @@ var display = function () {
     <button class="upd">update</button>
   </div>
 </div> `);
-    } else if (e.position === "coach") {
+    } else if (e.position === "coach"){
       $(".ch").append(`
             
             <div class="card">
