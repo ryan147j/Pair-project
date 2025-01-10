@@ -290,6 +290,7 @@ $(".rmv").on("click", function () {
 });
 
 $(".upd").on("click",function(){
+  
   alert("confirm to update ")
 
   
