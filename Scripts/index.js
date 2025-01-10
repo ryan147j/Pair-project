@@ -268,6 +268,27 @@ $("#createplayerform").on("click", "#add", function () {
   var newjerseyNumber = document.querySelector("#jerseynumber").value;
   var newOverallrating = document.querySelector("#overallrating").value;
   var newImg = document.querySelector("#playerimage").value;
+  
+  if (!newName) {
+    alert("The name is required")
+    return
+  }
+  if (!newPosition) {
+    alert("The position is required")
+    return
+  }
+  if (!newjerseyNumber) {
+    alert("The jersey number is required")
+    return
+  }
+  if (!newOverallrating) {
+    alert("The overall rating is required")
+    return
+  }
+  if (!newImg) {
+    alert("The image is required")
+    return
+  }
 
   var newOne = Createplayer(
     newName,
@@ -277,9 +298,10 @@ $("#createplayerform").on("click", "#add", function () {
     newOverallrating
   );
   players.push(newOne);
-
+  
   localStorage.setItem("players", JSON.stringify(players)); // set new player to the localstorqge
   window.location.href = "../Pages/index.html";
+  
 });
 
 
